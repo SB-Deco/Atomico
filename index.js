@@ -72,55 +72,13 @@ client.on('message', message => {
 
 });
 
-const axios = require('axios');
 
-client.on('message', message => {
 
-	if (message.author.id === client.user.id) return;
+			
 
-	if (
+	
 
-		message.channel.id === '831396431650619403' ||
 
-		message.channel.id === '831954631793442887'
-
-	) {
-
-		axios
-
-			.get(
-
-				`https://api.fc5570.ml/chatbot?text=${message.content
-
-					.trim()
-
-					.split(/ +/g)
-
-					.join('+')
-
-					.toLowerCase()}`
-
-			)
-
-			.then(response => {
-
-				message.reply(response.data.response);
-
-			})
-
-			.catch(err => {
-
-				// catch all potential errors
-
-				message.reply(`${err}`);
-
-				console.error(err);
-
-			});
-
-	}
-
-});
 
 process.on('unhandledRejection', error => {
 
