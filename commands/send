@@ -1,6 +1,6 @@
 exports.run = async(client, message) => {
 
-message.channel.send('Here is ${message}', {
+message.channel.send('Here is ${message.content}', {
 
     files: ['./assets/${message.content}']
 
